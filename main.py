@@ -6,10 +6,10 @@ screen.init(dir=2)
 screen.show_bg(color=0xFFFFFF)
 screen.clear()
 
-#camera.init()#Init camera
+camera.init()#Init camera
 
 #Display the camera image onto the screen
-#screen.show_camera(camera)
+screen.show_camera(camera)
 
 bt_a=button(button.a)#Init button A
 bt_b=button(button.b)#Init button B
@@ -40,7 +40,7 @@ while True:
         sequence= 0
     sequence= sequence + 1
     
-    screen.draw_text(text="Temp= {str(temp_humi.read_temp())} ºC",line=1, font_size=30,color=0xFF0000)
+    screen.draw_text(text="Temp=" + str(temp_humi.read_temp())+ " oC",line=1, font_size=30,color=0xFF0000)
     screen.draw_text(text=" Humi=" + str(temp_humi.read_humi())+ " %RH",line=2, font_size=30,color=0xFF0000)
     screen.draw_text(text="Light=" + str(light.read())+ " Lux",line=3, font_size=30,color=0xFF0000)
     
